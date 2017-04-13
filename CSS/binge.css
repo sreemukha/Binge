@@ -1,0 +1,67 @@
+ .form-control{
+                    -webkit-border-radius: 50px;
+                    -moz-border-radius: 50px;
+                     border-radius: 50px;
+                     background-color: rgba(0,0,0,0.1);
+                     border: 2px solid white;
+                     color: whitesmoke;
+                }
+
+.form-control:focus{
+                    box-shadow: 0 0 7px whitesmoke;
+                    border-color: whitesmoke;    
+}
+body{
+                    background: url(../images/bg1.jpg) no-repeat center center fixed; 
+                    -webkit-background-size: cover;
+                    -moz-background-size: cover;
+                    -o-background-size: cover;
+                    background-size: cover;
+                }
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+                    color: white !important;
+                }
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+                   color: white !important;
+                   opacity:  1;
+                }
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+                   color: white !important;
+                   opacity:  1;
+                }
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+                   color: white !important;
+                }
+        
+
+
+.icon-addon {
+                    position: relative;
+                    color: white;
+                    display: block;
+                }
+.icon-addon .glyphicon{
+                    position: absolute;
+                    z-index: 2;
+                    left: 92%;
+                    font-size: 18px;
+                    width: 20px;
+                    margin-left: -2.5px;
+                    text-align: center;
+                    padding: 10px 0;
+                    top: 1px;
+                }
+.icon-addon.addon-lg .form-control {
+                    line-height: 1.33;
+                    height: 46px;
+                    font-size: 18px;
+                    padding: 10px 16px 10px 20px;
+                }
+
+.vertical-center {
+                      min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+                      min-height: 100vh; /* These two lines are counted as one :-)       */
+
+                      display: flex;
+                      align-items: center;
+                }
