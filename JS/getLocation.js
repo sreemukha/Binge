@@ -4,11 +4,13 @@ var x = document.getElementById("search");
 window.onload = function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPositionLocality, showError);
+        
     } else { 
         
         x.value = "Geolocation is not supported by this browser.";
     }
 }
+
 
 function showPositionLocality(position) {
     
@@ -28,10 +30,29 @@ function showPositionLocality(position) {
   });
 }
 
+document.getElementById("search").focus;
+
 function showError(error) {
     switch(error.code) {
         case error.PERMISSION_DENIED:
             window.alert("Please enter your location");
+//            
+//            function initialize() {
+//            var options = {
+//            types: ['(cities)'],
+//            componentRestrictions: {country: "us"}
+//            };
+//            var input = document.getElementById('search');
+//            var autocomplete = new google.maps.places.Autocomplete(input[0],options);
+//            /*autocomplete.addListener('place_changed', function () {
+//            var place = autocomplete.getPlace();
+//            // place variable will have all the information you are looking for.
+//            console.log(place.geometry['location'].lat());
+//            console.log(place.geometry['location'].lng());
+//            });*/
+//            
+//        }
+//        google.maps.event.addDomListener(window, 'click', initialize);
             break;
         case error.POSITION_UNAVAILABLE:
             window.alert("Location information is unavailable.");
