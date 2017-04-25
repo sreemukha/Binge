@@ -1,6 +1,6 @@
 
 var input = document.getElementById("search");
-var x = document.getElementById("search");
+
 function initialize() {
             var options = {
             types: ['(cities)'],
