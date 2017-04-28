@@ -76,10 +76,15 @@ function geocodeAdress(){
 	var address = input.value;
 	geocoder.geocode({'address' : address}, function(results, status){
 		if (status==='OK') {
-			// var params = results[0].geometry.location.toString();
-			// var xhr = new XMLHttpRequest();
-			// xhr.open('POST', 'http://localhost:8080/databasedesign/webapi/myresource', true);
-			// xhr.send(params);	
+			var params = results[0].geometry.location.toString();
+			var xhr = new XMLHttpRequest();
+			xhr.open('POST', 'http://localhost:8080/databasedesign/webapi/myresource', true);
+			xhr.send(params);	
+			xhr.onreadystatechange = function () { //Call a function when the state changes.
+    			if (xhr.readyState == 4 && xhr.status == 200) {
+        			alert(xhr.responseText);
+    			}
+			}
 			console.log(results[0].geometry.location.toString());
 		}
 		else{
