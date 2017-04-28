@@ -77,15 +77,22 @@ function geocodeAdress(){
 	geocoder.geocode({'address' : address}, function(results, status){
 		if (status==='OK') {
 			var params = results[0].geometry.location.toString();
+			var latlongArray = params.split(",");
+			var lat = latlongArray[0];
+			var long = latlongArray[1];
+			var parameters = "latitude="+lat+"&longitude="+long;
+			var url = "http://localhost:8081/databasedesign/webapi/myresource/data"
 			var xhr = new XMLHttpRequest();
-			xhr.open('POST', 'http://localhost:8080/databasedesign/webapi/myresource', true);
+			xhr.open("GET", url+"?"parameters, true);
 			xhr.send(params);	
+			
 			xhr.onreadystatechange = function () { //Call a function when the state changes.
     			if (xhr.readyState == 4 && xhr.status == 200) {
         			alert(xhr.responseText);
     			}
 			}
-			console.log(results[0].geometry.location.toString());
+			// console.log(latitude);
+			// console.log(longitude);
 		}
 		else{
 			alert("Geocode was not successful for the following reason: " + status);
