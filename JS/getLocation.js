@@ -3,23 +3,11 @@ var input = document.getElementById("search");
 var geocoder = new google.maps.Geocoder;
 input.addEventListener("keydown", function(addr){
 		if(addr.keyCode === 13){
+			//getResults();
 			geocodeAdress();
 		}
 	})
 
-// This function handles the auto-fill of the drop down associated with the search box
-function initialize() {
-            var options = {
-            types: ['(cities)'],
-            componentRestrictions: {country: "us"}
-            };
-            //var input = document.getElementById('search');
-            var autocomplete = new google.maps.places.Autocomplete(input,options);
-            autocomplete.addListener('place_changed', function () {
-            var place = autocomplete.getPlace();
-            });
-             
-}
 google.maps.event.addDomListener(window, 'load', initialize); 
 
 // This is the function that asks the user for location access
@@ -70,33 +58,5 @@ function showError(error) {
     }
 }
 
-//This function is used to convert the addressfield to longitude and latitude values
-function geocodeAdress(){
 
-	var address = input.value;
-	geocoder.geocode({'address' : address}, function(results, status){
-		if (status==='OK') {
-			var params = results[0].geometry.location.toString();
-			var latlongArray = params.split(",");
-			var lat = latlongArray[0];
-			var long = latlongArray[1];
-			var parameters = "latitude="+lat+"&longitude="+long;
-			var url = "http://localhost:8081/databasedesign/webapi/myresource/data"
-			var xhr = new XMLHttpRequest();
-			xhr.open("GET", url+"?"parameters, true);
-			xhr.send(params);	
-			
-			xhr.onreadystatechange = function () { //Call a function when the state changes.
-    			if (xhr.readyState == 4 && xhr.status == 200) {
-        			alert(xhr.responseText);
-    			}
-			}
-			// console.log(latitude);
-			// console.log(longitude);
-		}
-		else{
-			alert("Geocode was not successful for the following reason: " + status);
-		}
-	})
 
-}

@@ -6,8 +6,8 @@
 
 
 .logo2{
-        margin-top:5%;
-        margin-left:1%;
+        margin-top:14%;
+        margin-left:20%;
         margin-bottom: 35%;
 }
 
@@ -31,6 +31,7 @@
                     box-shadow: 0 0 7px whitesmoke;
                     border-color: whitesmoke;    
 }
+
 body:before{
     
                   content: "";
@@ -82,7 +83,7 @@ body:before{
 .icon-addon .glyphicon{
                     position: absolute;
                     z-index: 2;
-                    left: 92%;
+                    left: 94%;
                     font-size: 18px;
                     width: 20px;
                     margin-left: -2.5px;
@@ -90,9 +91,116 @@ body:before{
                     padding: 10px 0;
                     top: 4px;
                 }
+
+
 .icon-addon.addon-lg .form-control {
                     line-height: 1.33;
                     height: 46px;
                     font-size: 18px;
                     padding: 10px 16px 10px 20px;
                 }
+
+
+.clickable{
+  cursor: pointer;
+}
+
+.panel-default > .panel-heading{
+background-color: rgb(65,44,23);
+opacity: 0.7;
+color: white;
+}
+
+.margin{
+  border: white 2px solid;
+}
+.panel-default >.panel-collapse > .panel-body{
+  background-color: rgb(115,89,62);
+  opacity: 0.7;
+  color: white;
+}
+.holder{
+  background-color: transparent;
+  padding-bottom: 2%;
+  border: none;
+}
+
+
+.main-div{
+/*  position: relative;*/
+}
+.first-div{
+  height: 50px;
+  width: 100%;
+  position: absolute;
+
+}
+.second-div{
+  height: 50px;
+  position: absolute;
+  margin-top: 10%;
+  margin-bottom: 5%;
+  width: 100%;
+  background-color: rgb(65,44,23);
+  opacity: 0.7;
+
+}
+.third-div{
+  position: absolute;
+  margin-top: 18%;
+  width: 100%;
+  margin-left: -25%
+}
+.searchBar{
+  margin-top: 1.7%;
+}
+
+select{
+	background:none;
+	color:white;
+	outline:none;
+	border:none;
+	margin-top:-0.5%;
+	font-size: 20px;
+	font-family:cursive;
+}
+
+option{
+	color:black;
+}
+.rating{
+	text-align:center;
+	margin-top:-3%;
+}
+
+.distance{
+	text-align:right;
+	margin-top:-4.5%;
+}
+.dropdown{
+  margin-left: 80%;
+  position: absolute;
+  margin-top: 10.5%;  
+}
+.directions{
+	text-decoration:none;
+	color:yellow;
+	font-family:cursive;
+}
+.directions:hover{
+	text-decoration:none;
+	color:yellow;
+	font-family:cursive;
+}
+
+.title{
+  position: absolute;
+  margin-top: 10.5%;
+  color: white;
+  margin-left: 10%;
+  font-size: 24px;
+  font-family: cursive;
+}
+.btn:hover{
+  color: white;
+}

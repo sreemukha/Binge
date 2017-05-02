@@ -51,7 +51,7 @@ public class DBOperations {
 		{
 			mongo = DBConnections.getInstance().getConnection();
 			DB database = mongo.getDB("yelp");
-			DBCollection collection = database.getCollection("business");	
+			DBCollection collection = database.getCollection("restaurants");	
 			
 			//collection.ensureIndex(new BasicDBObject("loc", "2d"), "geospatialindex");
 			BasicDBList geocord = new BasicDBList();
@@ -74,16 +74,16 @@ public class DBOperations {
 				System.out.println(dbobj.getString("name"));
 				JSONObject jsonObject = new JSONObject();
 				jsonObject.put("Name", dbobj.getString("name"));
-				jsonObject.put("Full Address", dbobj.getString("full_address"));
+				jsonObject.put("Full Address", dbobj.getString("address"));
 				jsonObject.put("City",dbobj.getString("city"));
 				jsonObject.put("State", dbobj.getString("state"));
 				BasicDBList categories = (BasicDBList) dbobj.get("categories");
-				BasicDBObject attributes = (BasicDBObject) dbobj.get("attributes");
+				BasicDBList attributes = (BasicDBList) dbobj.get("attributes");
 				jsonObject.put("Categories", categories);
 				jsonObject.put("Attributes", attributes);
 				double lat = dbobj.getDouble("latitude");
 				double lan = dbobj.getDouble("longitude");
-				BasicDBObject hours = (BasicDBObject) dbobj.get("hours");
+				BasicDBList hours = (BasicDBList) dbobj.get("hours");
 				jsonObject.put("Hours", hours);
 				jsonObject.put("Reviews", dbobj.get("review_count"));
 				jsonObject.put("Stars", dbobj.get("stars"));
