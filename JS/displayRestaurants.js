@@ -23,7 +23,7 @@ function transferData(){
 function displayResults(address, params){
 	
 	input.value = address;
-	var url = "http://localhost:8081/databasedesign/webapi/myresource/data"
+	var url = "http://52.89.61.199:8080/databasedesign/webapi/myresource/data"
     var xhr = new XMLHttpRequest();
     xhr.open("GET", url+"?"+params, true);
     xhr.send(); 
